@@ -13,8 +13,8 @@ NEIBaltimore <- NEI[NEI$fips=="24510",]
 AggBaltimore <- aggregate(Emissions ~ year, NEIBaltimore, sum)
   
 png('plot2.png')
-xx <- barplot(height = AggBaltimore$Emissions/1000, names.arg=AggBaltimore$year, xlab="Years", ylab=("PM2.5 Emissions"), ylim = c(0,4), main=("Total PM2.5 Emissions From Baltimore City, Maryland Sources"))
+xx <- barplot(height = round(AggBaltimore$Emissions,2), names.arg=AggBaltimore$year, xlab="Years", ylab=("PM2.5 Emissions In Tons"), main=("Total PM2.5 Emissions From Baltimore City, Maryland Sources"))
 
-text(x = xx, y = round(AggBaltimore$Emissions/1000,2), label = round(AggBaltimore$Emissions/1000,2), pos = 1, cex = 0.8, col = "blue")
+text(x = xx, y = round(AggBaltimore$Emissions,2), label = round(AggBaltimore$Emissions,2), pos = 1, cex = 0.8, col = "blue")
 dev.off()  
  
