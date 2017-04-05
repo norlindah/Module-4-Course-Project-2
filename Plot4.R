@@ -25,7 +25,7 @@ png("plot4.png", width=640, height=480)
 g <- ggplot(AggrEmission, aes(factor(year), round(Emissions/1000,2), fill = year, label = round(Emissions/1000,2)))
 g <- g + geom_bar(stat="identity", width=0.75) + 
   theme_bw() +  guides(fill=FALSE) +
-  labs(x="Year", y=expression("Total PM"[2.5]*" Emission In Kilotons)")) + 
+  labs(x="Year", y=expression("Total PM"[2.5]*" Emission")) + 
   ggtitle("Coal Combustion Source Emissions Across US from 1999 to 2008")+
   geom_label(aes(fill = year), colour = "white", fontface = "bold")
 
